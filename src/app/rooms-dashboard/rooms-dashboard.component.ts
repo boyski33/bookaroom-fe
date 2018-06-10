@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { RoomsService } from '../rooms.service';
 import { Room } from '../room';
 
@@ -7,17 +7,22 @@ import { Room } from '../room';
   templateUrl: './rooms-dashboard.component.html',
   styleUrls: ['./rooms-dashboard.component.css']
 })
-export class RoomsDashboardComponent implements OnInit {
-  allRooms: Room[];
+export class RoomsDashboardComponent implements OnInit, OnChanges {
+  @Input() allRooms: Room[];
 
   constructor(private _rs: RoomsService) {
   }
 
   ngOnInit() {
-    this.getAllRooms();
+    if (!this.allRooms) {
+      this._getAllRooms();
+    }
   }
 
-  getAllRooms() {
+  ngOnChanges() {
+  }
+
+  private _getAllRooms() {
     this._rs.getAllRooms()
       .subscribe(rooms => this.allRooms = rooms);
   }

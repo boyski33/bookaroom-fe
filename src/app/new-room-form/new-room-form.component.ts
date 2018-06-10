@@ -34,7 +34,8 @@ export class NewRoomFormComponent implements OnInit {
   private _buildForm() {
     this.newRoomForm = this._fb.group({
       name: '',
-      location: ''
+      location: '',
+      capacity: ''
     });
   }
 }

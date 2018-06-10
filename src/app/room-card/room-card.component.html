@@ -1,7 +1,8 @@
-<div class="card" style="width: 18rem;">
+<div [class.bg-danger]="room.isBooked" class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{room.name}}</h5>
     <h6 class="card-body">{{room.location}}</h6>
-    <button class="btn btn-primary">Book</button>
+    {{room.capacity}}
+    <button (click)="bookRoom()" class="btn btn-primary">Book</button>
   </div>
 </div>

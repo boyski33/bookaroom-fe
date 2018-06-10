@@ -13,10 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomsService } from './rooms.service';
 import { NewRoomFormComponent } from './new-room-form/new-room-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookedRoomsComponent } from './booked-rooms/booked-rooms.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'rooms', component: RoomsDashboardComponent },
+  { path: 'booked', component: BookedRoomsComponent },
   { path: 'new', component: NewRoomFormComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
@@ -30,7 +32,8 @@ const routes: Routes = [
     HomePageComponent,
     NotFoundComponent,
     NavbarComponent,
-    NewRoomFormComponent
+    NewRoomFormComponent,
+    BookedRoomsComponent
   ],
   imports: [
     BrowserModule,

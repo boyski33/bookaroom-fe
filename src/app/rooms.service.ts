@@ -16,9 +16,21 @@ export class RoomsService {
     return this._http.get<Room[]>(url);
   }
 
+  getBookedRooms() {
+    const url = `${backendUrl}/room?isBooked=true`;
+
+    return this._http.get<Room[]>(url);
+  }
+
   postNewRoom(room: Room) {
     const url = `${backendUrl}/room`;
 
     return this._http.post<Room>(url, room);
+  }
+
+  updateRoom(room: Room) {
+    const url = `${backendUrl}/room`;
+
+    return this._http.put<Room>(url, room);
   }
 }
