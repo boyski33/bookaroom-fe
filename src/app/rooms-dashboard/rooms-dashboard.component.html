@@ -1,3 +1,7 @@
+<div class="container text-danger" *ngIf="allRooms.length < 1">
+  <h3>No rooms at the moment.</h3>
+</div>
+
 <div class="container card-columns">
   <app-room-card *ngFor="let room of allRooms" [room]="room"></app-room-card>
 </div>

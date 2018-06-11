@@ -1,8 +1,11 @@
-<div [class.bg-danger]="room.isBooked" class="card" style="width: 18rem;">
+<div [class.bg-booked]="room.isBooked" class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{room.name}}</h5>
-    <h6 class="card-body">{{room.location}}</h6>
-    {{room.capacity}}
-    <button (click)="bookRoom()" class="btn btn-primary">Book</button>
+    <div class="card-body">
+      <h6>{{room.location}}</h6>
+      {{room.capacity && 'Capacity: ' + room.capacity}}
+    </div>
+    <button (click)="bookRoom()" class="btn btn-primary" [disabled]="room.isBooked">{{buttonText}}</button>
+    <button (click)="cancelRoom()" class="btn btn-info" [hidden]="!room.isBooked">Cancel</button>
   </div>
 </div>
