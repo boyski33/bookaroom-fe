@@ -1,0 +1,9 @@
+.card-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.bg-cool {
+  background-color: papayawhip;
+}
