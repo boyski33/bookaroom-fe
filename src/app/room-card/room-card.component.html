@@ -3,7 +3,7 @@
     <h5 class="card-title">{{room.name}}</h5>
     <div class="card-body">
       <h6>{{room.location}}</h6>
-      {{room.capacity && 'Capacity: ' + room.capacity}}
+      <span [hidden]="room.capacity === null || room.capacity < 0">{{'Capacity: ' + room.capacity}}</span>
     </div>
     <button (click)="bookRoom()" class="btn btn-primary" [disabled]="room.isBooked">{{buttonText}}</button>
     <button (click)="cancelRoom()" class="btn btn-info" [hidden]="!room.isBooked">Cancel</button>
