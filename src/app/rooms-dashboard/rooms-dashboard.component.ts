@@ -7,7 +7,7 @@ import { Room } from '../room';
   templateUrl: './rooms-dashboard.component.html',
   styleUrls: ['./rooms-dashboard.component.css']
 })
-export class RoomsDashboardComponent implements OnInit, OnChanges {
+export class RoomsDashboardComponent implements OnInit {
   @Input() allRooms: Room[];
 
   constructor(private _rs: RoomsService) {
@@ -17,9 +17,6 @@ export class RoomsDashboardComponent implements OnInit, OnChanges {
     if (!this.allRooms) {
       this._getAllRooms();
     }
-  }
-
-  ngOnChanges() {
   }
 
   private _getAllRooms() {
